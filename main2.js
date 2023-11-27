@@ -24,25 +24,20 @@ elFormButton.addEventListener("click", (e) => {
        
 })
 function openPage(){
-    if (elFormEmail.value == "admin") {
+    if (elFormEmail.value == "admin" && elFormPassword.value == 123) {
         elFormEmail.style.border = "2px solid green"
-        window.open("index2.html")
-    }else{
-        elFormEmail.style.border = "2px solid red"
-    }
-    if (elFormPassword.value == 123) {
         elFormPassword.style.border = "2px solid green"
         window.open("index2.html")
-
-    }else{
-        elFormPassword.style.border = "2px solid red"
-    }
-    if(elFormEmail.value == "admin" && elFormPassword.value != 123 ){
+    }else if(elFormEmail.value == "admin" && elFormPassword.value != 123){
         elFormEmail.style.border = "2px solid green"
         elFormPassword.style.border = "2px solid red"
-    }else if(elFormPassword.value == 123 && elFormEmail.value != "admin" ){
-        elFormPassword.style.border = "2px solid green"
+    }else if(elFormEmail.value != "admin" && elFormPassword.value == 123){
         elFormEmail.style.border = "2px solid red"
+        elFormPassword.style.border = "2px solid green"
+    }else if(elFormEmail.value != "admin" && elFormPassword.value != 123){
+        elFormEmail.style.border = "2px solid red"
+        elFormPassword.style.border = "2px solid red"
     }
+    
    
 }
